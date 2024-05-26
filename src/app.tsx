@@ -1,5 +1,11 @@
+import { NextUIProvider, Button } from "@nextui-org/react";
+
 const App = () => {
-  return <div>test</div>;
+  return (
+    <NextUIProvider>
+      <Button>Test</Button>
+    </NextUIProvider>
+  );
 };
 
 export default App;
