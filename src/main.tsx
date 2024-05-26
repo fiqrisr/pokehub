@@ -1,10 +1,14 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { NextUIProvider } from "@nextui-org/react";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import "./index.css";
 
 import { routeTree } from "./routeTree.gen";
+import { queryClient } from "./http";
 
 const router = createRouter({ routeTree });
 
@@ -19,7 +23,12 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <NextUIProvider>
+        <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools initialIsOpen={false} />
+          <RouterProvider router={router} />
+        </QueryClientProvider>
+      </NextUIProvider>
     </StrictMode>,
   );
 }

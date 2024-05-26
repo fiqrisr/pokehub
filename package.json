@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.3.6",
+    "@tanstack/react-query": "^5.39.0",
+    "@tanstack/react-query-devtools": "^5.39.0",
     "@tanstack/react-router": "^1.34.0",
     "framer-motion": "^11.2.6",
+    "ky": "^1.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

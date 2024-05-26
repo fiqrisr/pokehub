@@ -1,0 +1,3 @@
+export const BASE_POKEMON_API_URL = import.meta.env.VITE_BASE_POKEMON_API_URL;
+export const BASE_POKEMON_ARTWORK_IMAGE_URL = import.meta.env
+  .VITE_BASE_POKEMON_ARTWORK_IMAGE_URL;
