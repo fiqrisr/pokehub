@@ -1,5 +1,4 @@
 import { PropsWithChildren, useEffect, useState } from "react";
-import useDarkMode from "use-dark-mode";
 
 import { Navbar } from "@/components";
 
