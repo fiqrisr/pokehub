@@ -2,13 +2,26 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 
 import { PokemonService } from "@/services";
 
-export const useGetAllPokemonQuery = () => {
+type UseGetAllPokemonQueryProps = {
+  queryParams: {
+    limit: number;
+    offset: number;
+  };
+};
+
+export const useGetAllPokemonQuery = ({
+  queryParams,
+}: UseGetAllPokemonQueryProps) => {
   return useInfiniteQuery({
-    queryKey: ["pokemon"],
+    queryKey: ["pokemon", queryParams],
     queryFn: async () => {
-      return await PokemonService.getAllPokemon();
+      return await PokemonService.getAllPokemon({
+        limit: queryParams.limit,
+        offset: queryParams.offset,
+      });
     },
     initialPageParam: 1,
-    getNextPageParam: (lastPage) => lastPage.next,
+    getNextPageParam: (lastPage) =>
+      lastPage.next ? queryParams.offset + queryParams.limit : undefined,
   });
 };

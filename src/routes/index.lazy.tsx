@@ -2,16 +2,27 @@ import { createLazyFileRoute } from "@tanstack/react-router";
 
 import { useGetAllPokemonQuery } from "@/hooks";
 
-export const Route = createLazyFileRoute("/")({
-  component: Index,
-});
-
-function Index() {
-  const { data } = useGetAllPokemonQuery();
+const Index = () => {
+  const { data } = useGetAllPokemonQuery({
+    queryParams: {
+      limit: 20,
+      offset: 0,
+    },
+  });
 
   return (
     <div className="p-2">
-      <h3>Welcome Home!</h3>
+      {data?.pages.map((page) => (
+        <div key={page.next}>
+          {page.results.map((pokemon) => (
+            <div key={pokemon.url}>{pokemon.name}</div>
+          ))}
+        </div>
+      ))}
     </div>
   );
-}
+};
+
+export const Route = createLazyFileRoute("/")({
+  component: Index,
+});

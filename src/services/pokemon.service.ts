@@ -1,7 +1,12 @@
 import { httpClient } from "@/http";
+import { CollectionParams, PokemonCollectionResponse } from "@/types";
 
 export const PokemonService = {
-  getAllPokemon: async () => {
-    return await httpClient.get("pokemon").json();
+  getAllPokemon: async (params: CollectionParams) => {
+    return await httpClient
+      .get("pokemon", {
+        searchParams: params,
+      })
+      .json<PokemonCollectionResponse>();
   },
 };
