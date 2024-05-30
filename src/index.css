@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .drop-shadow-violet {
+    filter: drop-shadow(0 25px 25px rgba(147, 83, 211, 0.4));
+  }
+
+  .drop-shadow-violet-dark {
+    filter: drop-shadow(0 25px 25px rgba(120, 40, 200, 0.45));
+  }
+}

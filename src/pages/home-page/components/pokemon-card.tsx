@@ -11,15 +11,18 @@ export const PokemonCard: React.FunctionComponent<PokemonCardProps> = ({
 }) => {
   return (
     <Card
-      shadow="sm"
+      shadow="none"
       isPressable
-      className="hover:-translate-y-2 hover:shadow-2xl hover:shadow-violet-500/50 transition-all"
+      disableRipple
+      className="group overflow-visible bg-transparent hover:-translate-y-2 transition-all"
     >
       <CardBody className="overflow-visible p-0">
         <Image
+          removeWrapper
+          shadow="none"
           width="100%"
           alt={`${name} image`}
-          className="w-full h-full object-cover"
+          className="drop-shadow-violet dark:drop-shadow-violet-dark w-full h-full object-cover p-1"
           src={imageUrl}
         />
       </CardBody>
