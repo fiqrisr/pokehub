@@ -1,3 +1,4 @@
+import { Button } from "@nextui-org/react";
 import { createLazyFileRoute } from "@tanstack/react-router";
 
 import { useGetAllPokemonQuery } from "@/hooks";

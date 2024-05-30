@@ -9,6 +9,8 @@ import ReactDOM from "react-dom/client";
 import { queryClient } from "./http";
 import { routeTree } from "./routeTree.gen";
 
+window.global = globalThis;
+
 const router = createRouter({ routeTree });
 
 declare module "@tanstack/react-router" {
