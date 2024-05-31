@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardBody, CardFooter } from "@nextui-org/card";
 import { useEffect, useState } from "react";
 import useDarkMode from "use-dark-mode";
 

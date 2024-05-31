@@ -1,9 +1,9 @@
+import { Link as NextUILink } from "@nextui-org/link";
 import {
-  Link as NextUILink,
   Navbar as NextUINavbar,
   NavbarBrand,
   NavbarContent,
-} from "@nextui-org/react";
+} from "@nextui-org/navbar";
 import { Link } from "@tanstack/react-router";
 
 import { ThemeSwitcher } from "@/components";

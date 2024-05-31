@@ -1,4 +1,4 @@
-import { Switch } from "@nextui-org/react";
+import { Switch } from "@nextui-org/switch";
 import useDarkMode from "use-dark-mode";
 
 import { USE_DARK_MODE_INITIAL_CONFIG } from "@/configs";
